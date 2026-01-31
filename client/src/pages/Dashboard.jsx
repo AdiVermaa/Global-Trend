@@ -41,11 +41,13 @@ const Dashboard = () => {
 
     // Filter by status
     if (statusFilter === 'urgent') {
-      filtered = filtered.filter((task) => {
-        if (!task.deadline) return false;
-        const diff = new Date(task.deadline) - new Date();
-        return diff > 0 && diff < 24 * 60 * 60 * 1000;
-      });
+      filtered = filtered
+        .filter((task) => {
+          if (!task.deadline) return false;
+          const diff = new Date(task.deadline) - new Date();
+          return diff > 0 && diff < 24 * 60 * 60 * 1000;
+        })
+        .sort((a, b) => new Date(a.deadline) - new Date(b.deadline));
     } else if (statusFilter !== 'all') {
       filtered = filtered.filter((task) => task.status === statusFilter);
     }
