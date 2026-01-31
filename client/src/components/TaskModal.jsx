@@ -6,6 +6,7 @@ const TaskModal = ({ isOpen, onClose, onSubmit, task = null }) => {
     title: '',
     description: '',
     status: 'pending',
+    deadline: '',
   });
 
   useEffect(() => {
@@ -14,12 +15,14 @@ const TaskModal = ({ isOpen, onClose, onSubmit, task = null }) => {
         title: task.title,
         description: task.description,
         status: task.status,
+        deadline: task.deadline ? new Date(task.deadline).toISOString().slice(0, 16) : '',
       });
     } else {
       setFormData({
         title: '',
         description: '',
         status: 'pending',
+        deadline: '',
       });
     }
   }, [task, isOpen]);
@@ -110,6 +113,20 @@ const TaskModal = ({ isOpen, onClose, onSubmit, task = null }) => {
               <option value="in-progress">In Progress</option>
               <option value="completed">Completed</option>
             </select>
+          </div>
+
+          <div>
+            <label htmlFor="deadline" className="block text-sm font-medium mb-2 text-slate-700">
+              Deadline
+            </label>
+            <input
+              type="datetime-local"
+              id="deadline"
+              name="deadline"
+              value={formData.deadline}
+              onChange={handleChange}
+              className="input-field"
+            />
           </div>
 
           <div className="flex gap-3 pt-4">

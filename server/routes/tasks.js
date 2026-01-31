@@ -64,6 +64,7 @@ router.post(
       .optional()
       .isIn(['pending', 'in-progress', 'completed'])
       .withMessage('Invalid status'),
+    body('deadline').optional().isISO8601().withMessage('Invalid deadline format'),
   ],
   async (req, res) => {
     try {
@@ -73,12 +74,13 @@ router.post(
         return res.status(400).json({ errors: errors.array() });
       }
 
-      const { title, description, status } = req.body;
+      const { title, description, status, deadline } = req.body;
 
       const task = await Task.create({
         title,
         description,
         status: status || 'pending',
+        deadline: deadline || null,
         user: req.user._id,
       });
 
@@ -107,6 +109,7 @@ router.put(
       .optional()
       .isIn(['pending', 'in-progress', 'completed'])
       .withMessage('Invalid status'),
+    body('deadline').optional().isISO8601().withMessage('Invalid deadline format'),
   ],
   async (req, res) => {
     try {
@@ -127,11 +130,11 @@ router.put(
         return res.status(401).json({ message: 'Not authorized' });
       }
 
-      const { title, description, status } = req.body;
+      const { title, description, status, deadline } = req.body;
 
       task = await Task.findByIdAndUpdate(
         req.params.id,
-        { title, description, status },
+        { title, description, status, deadline },
         { new: true, runValidators: true }
       );
 

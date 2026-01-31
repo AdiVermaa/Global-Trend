@@ -40,7 +40,13 @@ const Dashboard = () => {
     let filtered = tasks;
 
     // Filter by status
-    if (statusFilter !== 'all') {
+    if (statusFilter === 'urgent') {
+      filtered = filtered.filter((task) => {
+        if (!task.deadline) return false;
+        const diff = new Date(task.deadline) - new Date();
+        return diff > 0 && diff < 24 * 60 * 60 * 1000;
+      });
+    } else if (statusFilter !== 'all') {
       filtered = filtered.filter((task) => task.status === statusFilter);
     }
 
@@ -67,11 +73,13 @@ const Dashboard = () => {
     }
   };
 
-  const handleUpdateTask = async (taskData) => {
+  const handleUpdateTask = async (taskData, taskId = null) => {
     try {
-      const response = await api.put(`/tasks/${editingTask._id}`, taskData);
-      setTasks(tasks.map((task) => (task._id === editingTask._id ? response.data : task)));
-      setEditingTask(null);
+      const id = taskId || editingTask?._id;
+      if (!id) return;
+      const response = await api.put(`/tasks/${id}`, taskData);
+      setTasks(tasks.map((task) => (task._id === id ? response.data : task)));
+      if (!taskId) setEditingTask(null);
       setError('');
     } catch (err) {
       setError('Failed to update task. Please try again.');
@@ -195,6 +203,7 @@ const Dashboard = () => {
                 <option value="pending">Pending</option>
                 <option value="in-progress">In Progress</option>
                 <option value="completed">Completed</option>
+                <option value="urgent">Urgent</option>
               </select>
             </div>
           </div>
@@ -232,7 +241,13 @@ const Dashboard = () => {
           </div>
         ) : (
           filteredTasks.map((task) => (
-            <TaskCard key={task._id} task={task} onEdit={handleEdit} onDelete={handleDeleteTask} />
+            <TaskCard 
+              key={task._id} 
+              task={task} 
+              onEdit={handleEdit} 
+              onDelete={handleDeleteTask} 
+              onUpdate={handleUpdateTask}
+            />
           ))
         )}
       </div>
