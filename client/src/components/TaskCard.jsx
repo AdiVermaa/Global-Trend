@@ -37,33 +37,33 @@ const TaskCard = ({ task, onEdit, onDelete }) => {
   return (
     <div className="task-card animate-fade-in">
       <div className="flex items-start justify-between mb-3">
-        <h3 className="text-xl font-semibold text-white flex-1">{task.title}</h3>
+        <h3 className="text-xl font-semibold text-slate-800 flex-1">{task.title}</h3>
         <div className="flex items-center gap-2 ml-4">
           <button
             onClick={() => onEdit(task)}
-            className="p-2 hover:bg-white/10 rounded-lg transition-colors duration-200 group"
+            className="p-2 hover:bg-slate-100 rounded-lg transition-colors duration-200 group"
             title="Edit task"
           >
-            <Edit2 className="w-4 h-4 text-blue-400 group-hover:text-blue-300" />
+            <Edit2 className="w-4 h-4 text-blue-600 group-hover:text-blue-700" />
           </button>
           <button
             onClick={() => onDelete(task._id)}
-            className="p-2 hover:bg-white/10 rounded-lg transition-colors duration-200 group"
+            className="p-2 hover:bg-slate-100 rounded-lg transition-colors duration-200 group"
             title="Delete task"
           >
-            <Trash2 className="w-4 h-4 text-red-400 group-hover:text-red-300" />
+            <Trash2 className="w-4 h-4 text-red-500 group-hover:text-red-600" />
           </button>
         </div>
       </div>
       
-      <p className="text-white/70 mb-4 line-clamp-2">{task.description}</p>
+      <p className="text-slate-600 mb-4 line-clamp-2">{task.description}</p>
       
       <div className="flex items-center justify-between">
         <span className={`badge ${getStatusBadgeClass(task.status)}`}>
           {getStatusIcon(task.status)}
           {getStatusLabel(task.status)}
         </span>
-        <span className="text-xs text-white/50">
+        <span className="text-xs text-slate-400">
           {new Date(task.createdAt).toLocaleDateString()}
         </span>
       </div>

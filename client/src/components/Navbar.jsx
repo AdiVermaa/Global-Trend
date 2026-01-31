@@ -6,25 +6,25 @@ const Navbar = () => {
   const { user, logout, isAuthenticated } = useAuth();
 
   return (
-    <nav className="glass-card mx-4 mt-4 mb-8 animate-slide-down">
+    <nav className="bg-white/80 backdrop-blur-xl sticky top-0 z-50 border-b border-applegrey-100">
       <div className="page-container py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="bg-gradient-to-r from-primary-500 to-accent-500 p-2 rounded-xl group-hover:scale-110 transition-transform duration-300">
-              <CheckSquare className="w-6 h-6 text-white" />
+            <div className="bg-appleblue p-1.5 rounded-lg group-hover:scale-105 transition-transform duration-300">
+              <CheckSquare className="w-5 h-5 text-white" />
             </div>
-            <span className="text-2xl font-bold gradient-text">
+            <span className="text-xl font-semibold text-applegrey-500 tracking-tight">
               TaskFlow
             </span>
           </Link>
 
           {isAuthenticated && (
             <div className="flex items-center gap-4">
-              <div className="hidden sm:flex items-center gap-2 backdrop-blur-xl bg-white/5 px-4 py-2 rounded-xl border border-white/20">
-                <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center text-sm font-bold">
+              <div className="hidden sm:flex items-center gap-3">
+                <span className="text-applegrey-300 text-sm font-medium">{user?.name}</span>
+                <div className="w-8 h-8 bg-applegrey-100 rounded-full flex items-center justify-center text-applegrey-400 text-xs font-bold">
                   {user?.name?.charAt(0).toUpperCase()}
                 </div>
-                <span className="text-white/90">{user?.name}</span>
               </div>
               <button
                 onClick={logout}

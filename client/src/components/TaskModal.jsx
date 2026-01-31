@@ -43,7 +43,7 @@ const TaskModal = ({ isOpen, onClose, onSubmit, task = null }) => {
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 animate-fade-in">
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+        className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm"
         onClick={onClose}
       ></div>
 
@@ -51,7 +51,7 @@ const TaskModal = ({ isOpen, onClose, onSubmit, task = null }) => {
       <div className="relative glass-card p-8 w-full max-w-md animate-scale-in">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 hover:bg-white/10 rounded-lg transition-colors"
+          className="absolute top-4 right-4 p-2 hover:bg-slate-100 rounded-lg transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
@@ -62,7 +62,7 @@ const TaskModal = ({ isOpen, onClose, onSubmit, task = null }) => {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="title" className="block text-sm font-medium mb-2 text-white/80">
+            <label htmlFor="title" className="block text-sm font-medium mb-2 text-slate-700">
               Title
             </label>
             <input
@@ -79,7 +79,7 @@ const TaskModal = ({ isOpen, onClose, onSubmit, task = null }) => {
           </div>
 
           <div>
-            <label htmlFor="description" className="block text-sm font-medium mb-2 text-white/80">
+            <label htmlFor="description" className="block text-sm font-medium mb-2 text-slate-700">
               Description
             </label>
             <textarea
@@ -96,7 +96,7 @@ const TaskModal = ({ isOpen, onClose, onSubmit, task = null }) => {
           </div>
 
           <div>
-            <label htmlFor="status" className="block text-sm font-medium mb-2 text-white/80">
+            <label htmlFor="status" className="block text-sm font-medium mb-2 text-slate-700">
               Status
             </label>
             <select

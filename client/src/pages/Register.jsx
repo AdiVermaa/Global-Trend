@@ -44,22 +44,22 @@ const Register = () => {
             <CheckSquare className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-3xl font-bold gradient-text mb-2">Create Account</h1>
-          <p className="text-white/60">Join TaskFlow and manage your tasks efficiently</p>
+          <p className="text-slate-500">Join TaskFlow and manage your tasks efficiently</p>
         </div>
 
         {error && (
-          <div className="bg-red-500/20 border border-red-500/50 text-red-300 px-4 py-3 rounded-xl mb-4 animate-slide-down">
+          <div className="bg-red-100 border border-red-200 text-red-700 px-4 py-3 rounded-xl mb-4 animate-slide-down">
             {error}
           </div>
         )}
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium mb-2 text-white/80">
+            <label htmlFor="name" className="block text-sm font-medium mb-2 text-slate-700">
               Full Name
             </label>
             <div className="relative">
-              <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-white/50" />
+              <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
               <input
                 type="text"
                 id="name"
@@ -74,11 +74,11 @@ const Register = () => {
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium mb-2 text-white/80">
+            <label htmlFor="email" className="block text-sm font-medium mb-2 text-slate-700">
               Email Address
             </label>
             <div className="relative">
-              <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-white/50" />
+              <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
               <input
                 type="email"
                 id="email"
@@ -93,11 +93,11 @@ const Register = () => {
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium mb-2 text-white/80">
+            <label htmlFor="password" className="block text-sm font-medium mb-2 text-slate-700">
               Password
             </label>
             <div className="relative">
-              <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-white/50" />
+              <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
               <input
                 type="password"
                 id="password"
@@ -110,7 +110,7 @@ const Register = () => {
                 placeholder="••••••••"
               />
             </div>
-            <p className="text-xs text-white/50 mt-1">Must be at least 6 characters</p>
+            <p className="text-xs text-slate-400 mt-1">Must be at least 6 characters</p>
           </div>
 
           <button
@@ -122,9 +122,9 @@ const Register = () => {
           </button>
         </form>
 
-        <p className="text-center text-white/60 mt-6">
+        <p className="text-center text-slate-500 mt-6">
           Already have an account?{' '}
-          <Link to="/login" className="text-primary-400 hover:text-primary-300 font-semibold">
+          <Link to="/login" className="text-primary-600 hover:text-primary-700 font-semibold">
             Sign In
           </Link>
         </p>

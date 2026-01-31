@@ -43,22 +43,22 @@ const Login = () => {
             <CheckSquare className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-3xl font-bold gradient-text mb-2">Welcome Back</h1>
-          <p className="text-white/60">Sign in to continue managing your tasks</p>
+          <p className="text-slate-500">Sign in to continue managing your tasks</p>
         </div>
 
         {error && (
-          <div className="bg-red-500/20 border border-red-500/50 text-red-300 px-4 py-3 rounded-xl mb-4 animate-slide-down">
+          <div className="bg-red-100 border border-red-200 text-red-700 px-4 py-3 rounded-xl mb-4 animate-slide-down">
             {error}
           </div>
         )}
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium mb-2 text-white/80">
+            <label htmlFor="email" className="block text-sm font-medium mb-2 text-slate-700">
               Email Address
             </label>
             <div className="relative">
-              <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-white/50" />
+              <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
               <input
                 type="email"
                 id="email"
@@ -73,11 +73,11 @@ const Login = () => {
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium mb-2 text-white/80">
+            <label htmlFor="password" className="block text-sm font-medium mb-2 text-slate-700">
               Password
             </label>
             <div className="relative">
-              <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-white/50" />
+              <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
               <input
                 type="password"
                 id="password"
@@ -100,9 +100,9 @@ const Login = () => {
           </button>
         </form>
 
-        <p className="text-center text-white/60 mt-6">
+        <p className="text-center text-slate-500 mt-6">
           Don't have an account?{' '}
-          <Link to="/register" className="text-primary-400 hover:text-primary-300 font-semibold">
+          <Link to="/register" className="text-primary-600 hover:text-primary-700 font-semibold">
             Sign Up
           </Link>
         </p>

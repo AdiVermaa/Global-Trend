@@ -134,28 +134,28 @@ const Dashboard = () => {
   return (
     <div className="page-container">
       {/* Header Section */}
-      <div className="mb-8 animate-slide-up">
-        <h1 className="text-4xl font-bold gradient-text mb-2">My Tasks</h1>
-        <p className="text-white/60">Manage and organize your tasks efficiently</p>
+      <div className="mb-12 animate-slide-up">
+        <h1 className="heading-1">My Tasks</h1>
+        <p className="subheading">Manage and organize your tasks efficiently</p>
       </div>
 
       {/* Stats Cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 animate-slide-up">
         <div className="glass-card p-6">
-          <p className="text-white/60 text-sm mb-1">Total Tasks</p>
-          <p className="text-3xl font-bold text-white">{stats.total}</p>
+          <p className="text-applegrey-300 text-[13px] font-semibold uppercase tracking-wider mb-1">Total Tasks</p>
+          <p className="text-3xl font-bold text-applegrey-500">{stats.total}</p>
         </div>
         <div className="glass-card p-6">
-          <p className="text-white/60 text-sm mb-1">Pending</p>
-          <p className="text-3xl font-bold text-yellow-400">{stats.pending}</p>
+          <p className="text-applegrey-300 text-[13px] font-semibold uppercase tracking-wider mb-1">Pending</p>
+          <p className="text-3xl font-bold text-orange-500">{stats.pending}</p>
         </div>
         <div className="glass-card p-6">
-          <p className="text-white/60 text-sm mb-1">In Progress</p>
-          <p className="text-3xl font-bold text-blue-400">{stats.inProgress}</p>
+          <p className="text-applegrey-300 text-[13px] font-semibold uppercase tracking-wider mb-1">In Progress</p>
+          <p className="text-3xl font-bold text-appleblue">{stats.inProgress}</p>
         </div>
         <div className="glass-card p-6">
-          <p className="text-white/60 text-sm mb-1">Completed</p>
-          <p className="text-3xl font-bold text-green-400">{stats.completed}</p>
+          <p className="text-applegrey-300 text-[13px] font-semibold uppercase tracking-wider mb-1">Completed</p>
+          <p className="text-3xl font-bold text-green-500">{stats.completed}</p>
         </div>
       </div>
 
@@ -173,7 +173,7 @@ const Dashboard = () => {
           <div className="flex flex-col sm:flex-row gap-4 flex-1 w-full">
             {/* Search */}
             <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-white/50" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
               <input
                 type="text"
                 placeholder="Search tasks..."
@@ -185,7 +185,7 @@ const Dashboard = () => {
 
             {/* Status Filter */}
             <div className="relative">
-              <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-white/50" />
+              <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
               <select
                 value={statusFilter}
                 onChange={(e) => setStatusFilter(e.target.value)}
@@ -202,10 +202,10 @@ const Dashboard = () => {
           {/* Create Task Button */}
           <button
             onClick={() => setIsModalOpen(true)}
-            className="btn-primary flex items-center gap-2 w-full sm:w-auto"
+            className="btn-primary flex items-center gap-2 w-full sm:w-auto px-8"
           >
             <Plus className="w-5 h-5" />
-            New Task
+            Add Task
           </button>
         </div>
       </div>
@@ -214,11 +214,11 @@ const Dashboard = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredTasks.length === 0 ? (
           <div className="col-span-full glass-card p-12 text-center">
-            <div className="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-4">
-              <AlertCircle className="w-8 h-8 text-white/40" />
+            <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <AlertCircle className="w-8 h-8 text-slate-400" />
             </div>
-            <h3 className="text-xl font-semibold text-white/60 mb-2">No tasks found</h3>
-            <p className="text-white/40 mb-6">
+            <h3 className="text-xl font-semibold text-slate-600 mb-2">No tasks found</h3>
+            <p className="text-slate-400 mb-6">
               {searchQuery || statusFilter !== 'all'
                 ? 'Try adjusting your filters'
                 : 'Create your first task to get started'}
