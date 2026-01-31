@@ -1,184 +1,102 @@
-# Global Trend - Task Management Application
+# TaskFlow - Premium Task Management
 
-A modern, full-stack task management web application built with React, Tailwind CSS, Node.js, Express, and MongoDB.
+A state-of-the-art, full-stack task management application inspired by Apple's minimalist design philosophy. Built with the MERN stack (MongoDB, Express, React, Node.js) and powered by Tailwind CSS.
 
-## Features
+## 🍎 Design Philosophy
 
-- ✅ **CRUD Operations**: Create, Read, Update, and Delete tasks
-- 🎨 **Modern UI**: Responsive design with Tailwind CSS and smooth animations
-- 🔐 **Authentication**: Secure user authentication with JWT
-- 🔍 **Filters**: Filter tasks by status (All, Pending, In Progress, Completed)
-- 📱 **Responsive**: Works seamlessly on desktop, tablet, and mobile devices
-- 🌙 **Premium Design**: Modern glassmorphism effects and vibrant gradients
+TaskFlow is designed to be clean, intuitive, and distraction-free.
 
-## Tech Stack
+- **Minimalist UI**: High-clarity white glass effects and generous white space.
+- **Apple Aesthetics**: Uses the system-standard Apple Blue (`#007AFF`) and soft shadow hierarchies.
+- **Micro-interactions**: Smooth, iOS-like transitions and scale-in animations.
 
-### Frontend
+---
 
-- React 18
-- Tailwind CSS
-- Vite
-- Axios
-- React Router DOM
-
-### Backend
-
-- Node.js
-- Express.js
-- MongoDB with Mongoose
-- JWT Authentication
-- bcrypt for password hashing
-- CORS enabled
-
-## Project Structure
-
-```
-Global_Trend/
-├── client/                 # Frontend React application
-│   ├── src/
-│   │   ├── components/    # Reusable components
-│   │   ├── pages/         # Page components
-│   │   ├── context/       # Context API for state management
-│   │   ├── utils/         # Utility functions
-│   │   └── App.jsx        # Main app component
-│   └── package.json
-├── server/                # Backend Node.js application
-│   ├── models/           # MongoDB models
-│   ├── routes/           # API routes
-│   ├── middleware/       # Custom middleware
-│   ├── config/           # Configuration files
-│   └── server.js         # Server entry point
-└── README.md
-```
-
-## Getting Started
+## 🚀 Quick Setup
 
 ### Prerequisites
 
-- Node.js (v14 or higher)
-- MongoDB (local or Atlas)
-- npm or yarn
+- [Node.js](https://nodejs.org/) (v18 or higher)
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) account (or local MongoDB)
 
-### Installation
-
-1. **Clone the repository**
+### 1. Clone the Project
 
 ```bash
-cd Global_Trend
+git clone https://github.com/AdiVermaa/Global-Trend.git
+cd Global-Trend
 ```
 
-2. **Setup Backend**
+### 2. Backend Configuration
 
-```bash
-cd server
-npm install
-```
+1. Navigate to the server directory:
+   ```bash
+   cd server
+   npm install
+   ```
+2. Create a `.env` file in the `server/` folder and add:
+   ```env
+   PORT=5001
+   MONGODB_URI=your_mongodb_atlas_connection_string
+   JWT_SECRET=your_super_secret_key
+   NODE_ENV=development
+   ```
+3. Start the backend:
+   ```bash
+   npm run dev
+   ```
 
-Create a `.env` file in the server directory:
+### 3. Frontend Configuration
 
-```env
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/task-management
-JWT_SECRET=your_jwt_secret_key_here
-NODE_ENV=development
-```
+1. Navigate to the client directory:
+   ```bash
+   cd ../client
+   npm install
+   ```
+2. Create a `.env` file in the `client/` folder and add:
+   ```env
+   VITE_API_URL=http://localhost:5001/api
+   ```
+3. Start the frontend:
+   ```bash
+   npm run dev
+   ```
 
-3. **Setup Frontend**
+---
 
-```bash
-cd ../client
-npm install
-```
+## 🛠 Tech Stack
 
-### Running the Application
+| Tier         | Technology                                      |
+| :----------- | :---------------------------------------------- |
+| **Frontend** | React (Vite), Tailwind CSS, Lucide Icons, Axios |
+| **Backend**  | Node.js, Express.js, JWT Authentication         |
+| **Database** | MongoDB Atlas (Cloud)                           |
+| **Styling**  | Custom Apple-Design System with PostCSS         |
 
-1. **Start MongoDB** (if running locally)
+---
 
-```bash
-mongod
-```
+## 📖 Features
 
-2. **Start Backend Server**
+- **Secure Auth**: Password hashing with bcrypt and JWT-based session management.
+- **Dashboard**: Real-time task statistics (Pending, In-Progress, Completed).
+- **CRUD**: Full Create, Read, Update, and Delete capabilities for tasks.
+- **Search & Filter**: Instant search and status filtering for efficient management.
+- **Responsive**: Fully optimized for macOS, iOS, and Windows browsers.
 
-```bash
-cd server
-npm run dev
-```
+---
 
-3. **Start Frontend Development Server**
+## 📦 Deployment
 
-```bash
-cd client
-npm run dev
-```
+The application is ready for production:
 
-The application will be available at:
+- **Frontend**: Deploy to **Vercel** (connect the `client` folder).
+- **Backend**: Deploy to **Render** or **Railway** (connect the `server` folder).
 
-- Frontend: http://localhost:5173
-- Backend: http://localhost:5000
+---
 
-## API Endpoints
+## 🤝 Contributing
 
-### Authentication
+Feel free to fork this project and submit PRs for any improvements!
 
-- `POST /api/auth/register` - Register a new user
-- `POST /api/auth/login` - Login user
+## 📄 License
 
-### Tasks
-
-- `GET /api/tasks` - Get all tasks (requires authentication)
-- `GET /api/tasks/:id` - Get a specific task
-- `POST /api/tasks` - Create a new task
-- `PUT /api/tasks/:id` - Update a task
-- `DELETE /api/tasks/:id` - Delete a task
-
-## Design Choices
-
-1. **Component-Based Architecture**: The frontend is built using reusable React components for maintainability and scalability.
-
-2. **JWT Authentication**: Secure token-based authentication ensures that only authenticated users can access and manage their tasks.
-
-3. **RESTful API Design**: The backend follows REST principles with clear, predictable endpoints for all CRUD operations.
-
-4. **Modern UI/UX**: Implemented glassmorphism effects, smooth animations, and a vibrant color palette to create an engaging user experience that goes beyond a basic MVP.
-
-5. **Context API**: Used React Context for global state management instead of prop drilling, making the codebase cleaner and more maintainable.
-
-## Testing
-
-Run tests with:
-
-```bash
-# Backend tests
-cd server
-npm test
-
-# Frontend tests
-cd client
-npm test
-```
-
-## Deployment
-
-### Backend (Render/Railway)
-
-1. Push code to GitHub
-2. Connect repository to deployment platform
-3. Set environment variables
-4. Deploy
-
-### Frontend (Vercel/Netlify)
-
-1. Build the production bundle: `npm run build`
-2. Connect repository to deployment platform
-3. Set build command: `npm run build`
-4. Set output directory: `dist`
-5. Deploy
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-MIT License
+Licensed under the [MIT License](LICENSE).
