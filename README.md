@@ -2,9 +2,7 @@
 
 ## Overview
 
-TaskFlow is a robust, full-stack task orchestration platform engineered for high-performance productivity. This repository implements a high-availability architecture using the MERN stack (MongoDB, Express.js, React, Node.js), adhering to industry-standard design patterns and Apple's Human Interface Guidelines for a premium, minimalist user experience.
-
----
+TaskFlow is a robust, full-stack task orchestration platform engineered for high-performance productivity. This repository implements a high-availability architecture using the MERN stack (MongoDB, Express.js, React, Node.js)
 
 ## System Architecture
 
@@ -23,8 +21,6 @@ TaskFlow is a robust, full-stack task orchestration platform engineered for high
 - **Persistence**: MongoDB Atlas (Cloud Tier)
 - **ODM**: Mongoose 8.0
 - **Security**: JWT (Stateless Auth), bcryptjs (Hashing)
-
----
 
 ## Dependency Documentation
 
@@ -84,8 +80,6 @@ TaskFlow is a robust, full-stack task orchestration platform engineered for high
 - `DELETE /api/tasks/:id`
   - Purpose: Soft/Hard removal of a task entry.
   - Access: Private (Ownership checked).
-
----
 
 ## Setup and Development
 
