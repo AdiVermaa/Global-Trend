@@ -32,11 +32,11 @@ const Landing = () => {
           {/* Features */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
             <div className="glass-card p-10 text-center group">
-              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-apple-blue transition-colors duration-300">
+              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-appleblue transition-colors duration-300">
                 <Sparkles className="w-8 h-8 text-appleblue group-hover:text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-slate-800">Intuitive Interface</h3>
-              <p className="text-slate-500">
+              <h3 className="text-xl font-semibold mb-3 text-applegrey-500">Intuitive Interface</h3>
+              <p className="text-applegrey-300">
                 Beautiful, modern design that makes task management a breeze
               </p>
             </div>
@@ -45,8 +45,8 @@ const Landing = () => {
               <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-appleblue transition-colors duration-300">
                 <Zap className="w-8 h-8 text-appleblue group-hover:text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-slate-800">Lightning Fast</h3>
-              <p className="text-slate-500">
+              <h3 className="text-xl font-semibold mb-3 text-applegrey-500">Lightning Fast</h3>
+              <p className="text-applegrey-300">
                 Quick and responsive performance for seamless task management
               </p>
             </div>
@@ -55,8 +55,8 @@ const Landing = () => {
               <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-appleblue transition-colors duration-300">
                 <Shield className="w-8 h-8 text-appleblue group-hover:text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-slate-800">Secure & Private</h3>
-              <p className="text-slate-500">
+              <h3 className="text-xl font-semibold mb-3 text-applegrey-500">Secure & Private</h3>
+              <p className="text-applegrey-300">
                 Your tasks are protected with industry-standard security
               </p>
             </div>
