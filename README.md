@@ -131,8 +131,3 @@ To ensure optimal performance and security:
 
 ---
 
-## Support and Contribution
-
-Contributions are reviewed through a standard PR lifecycle. For high-priority issues, please refer to the internal DevOps dashboard.
-
-**License**: Distributed under the MIT License.
